@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap');
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  font-size: 20px;
+  color: #e94560;
+  opacity: 0.2;
+  animation: floatUp 15s infinite ease-in-out;
+}
+
+.particle:nth-child(1) { left: 5%; animation-delay: 0s; }
+.particle:nth-child(2) { left: 10%; animation-delay: 1s; }
+.particle:nth-child(3) { left: 15%; animation-delay: 2s; }
+.particle:nth-child(4) { left: 20%; animation-delay: 3s; }
+.particle:nth-child(5) { left: 25%; animation-delay: 0.5s; }
+.particle:nth-child(6) { left: 30%; animation-delay: 1.5s; }
+.particle:nth-child(7) { left: 35%; animation-delay: 2.5s; }
+.particle:nth-child(8) { left: 40%; animation-delay: 3.5s; }
+.particle:nth-child(9) { left: 45%; animation-delay: 0.2s; }
+.particle:nth-child(10) { left: 50%; animation-delay: 1.2s; }
+.particle:nth-child(11) { left: 55%; animation-delay: 2.2s; }
+.particle:nth-child(12) { left: 60%; animation-delay: 3.2s; }
+.particle:nth-child(13) { left: 65%; animation-delay: 0.7s; }
+.particle:nth-child(14) { left: 70%; animation-delay: 1.7s; }
+.particle:nth-child(15) { left: 75%; animation-delay: 2.7s; }
+.particle:nth-child(16) { left: 80%; animation-delay: 3.7s; }
+.particle:nth-child(17) { left: 85%; animation-delay: 0.3s; }
+.particle:nth-child(18) { left: 90%; animation-delay: 1.3s; }
+.particle:nth-child(19) { left: 93%; animation-delay: 2.3s; }
+.particle:nth-child(20) { left: 97%; animation-delay: 3.3s; }
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-100px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 60px 20px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease;
+}
+
+.subtitle {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+  color: #d4af37;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  animation: fadeInUp 1s ease 0.3s both;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  width: 100%;
+  animation: fadeInUp 1s ease 0.5s both;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: #d4af37;
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+}
+
+.cardImage {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardIcon {
+  font-size: 4rem;
+  z-index: 1;
+}
+
+.cardContent {
+  padding: 30px;
+}
+
+.cardContent h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.cardContent p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.cardLink {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+  color: #d4af37;
+  letter-spacing: 0.1em;
+  transition: letter-spacing 0.3s ease;
+}
+
+.card:hover .cardLink {
+  letter-spacing: 0.2em;
+}
+
+.footer {
+  margin-top: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  color: #888888;
+  animation: fadeInUp 1s ease 0.7s both;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+  }
+}

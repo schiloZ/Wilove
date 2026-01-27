@@ -1,64 +1,83 @@
-import Image from "next/image";
+'use client';
+
+import Link from 'next/link';
+import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className={styles.container}>
+      <div className={styles.background}>
+        <div className={styles.particles}>
+          {[...Array(20)].map((_, i) => (
+            <div key={i} className={styles.particle}>♥</div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </div>
+
+      <main className={styles.main}>
+        <h1 className={styles.title}>Love Stories</h1>
+        <p className={styles.subtitle}>Collection de Pages Romantiques</p>
+        
+        <div className={styles.cardGrid}>
+          <Link href="/jean-marie" className={styles.card}>
+            <div className={styles.cardImage} style={{ background: 'linear-gradient(135deg, #fff5f5, #f5e6d3)' }}>
+              <span className={styles.cardIcon}>💕</span>
+            </div>
+            <div className={styles.cardContent}>
+              <h2>Jean & Marie</h2>
+              <p>Thème Rose & Or - Style Romantique Classique</p>
+              <span className={styles.cardLink}>Voir la page →</span>
+            </div>
+          </Link>
+
+          <Link href="/konan-adjoua" className={styles.card}>
+            <div className={styles.cardImage} style={{ background: 'linear-gradient(135deg, #141414, #1a1a1a)' }}>
+              <span className={styles.cardIcon}>✨</span>
+            </div>
+            <div className={styles.cardContent}>
+              <h2>Konan & Adjoua</h2>
+              <p>Thème Noir & Or - Style Luxe Élégant</p>
+              <span className={styles.cardLink}>Voir la page →</span>
+            </div>
+          </Link>
+
+          <Link href="/aya-marc" className={styles.card}>
+            <div className={styles.cardImage} style={{ background: 'linear-gradient(135deg, #ff69b4, #ec4899, #f0abfc)' }}>
+              <span className={styles.cardIcon}>💗</span>
+            </div>
+            <div className={styles.cardContent}>
+              <h2>Aya & Marc</h2>
+              <p>Thème Pink & Magenta - Style Playful</p>
+              <span className={styles.cardLink}>Voir la page →</span>
+            </div>
+          </Link>
+
+          <Link href="/fatou-ibrahim" className={styles.card}>
+            <div className={styles.cardImage} style={{ background: 'linear-gradient(135deg, #0a0a1a, #1a1a4e, #7c3aed)' }}>
+              <span className={styles.cardIcon}>⭐</span>
+            </div>
+            <div className={styles.cardContent}>
+              <h2>Fatou & Ibrahim</h2>
+              <p>Thème Étoiles & Cosmos - Style Céleste</p>
+              <span className={styles.cardLink}>Voir la page →</span>
+            </div>
+          </Link>
+
+          <Link href="/amara-yves" className={styles.card}>
+            <div className={styles.cardImage} style={{ background: 'linear-gradient(135deg, #ff8c42, #00b4d8, #0077b6)' }}>
+              <span className={styles.cardIcon}>🌴</span>
+            </div>
+            <div className={styles.cardContent}>
+              <h2>Amara & Yves</h2>
+              <p>Thème Tropical & Plage - Style Paradise</p>
+              <span className={styles.cardLink}>Voir la page →</span>
+            </div>
+          </Link>
         </div>
+
+        <p className={styles.footer}>
+          5 magnifiques thèmes disponibles 💖
+        </p>
       </main>
     </div>
   );

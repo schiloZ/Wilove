@@ -1,0 +1,1185 @@
+/* Fatou & Ibrahim - Cosmic/Starry Night Theme */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&display=swap");
+
+.container {
+  --night-darkest: #0a0a1a;
+  --night-dark: #0f0f2e;
+  --night-medium: #1a1a4e;
+  --night-soft: #2d2d6e;
+  --star-gold: #ffd700;
+  --star-silver: #e8e8ff;
+  --moon-glow: #fffacd;
+  --cosmic-purple: #7c3aed;
+  --cosmic-blue: #3b82f6;
+  --nebula-pink: #ec4899;
+  --nebula-purple: #a855f7;
+  --white: #ffffff;
+  --white-soft: #e8e8f0;
+  --text-light: #c8c8e0;
+
+  font-family: "Spectral", serif;
+  background: var(--night-darkest);
+  color: var(--white);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Stars Background */
+.starsContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.starsSmall {
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, var(--star-silver) 100%, transparent),
+    radial-gradient(1px 1px at 20% 50%, var(--star-silver) 100%, transparent),
+    radial-gradient(1px 1px at 30% 10%, var(--star-silver) 100%, transparent),
+    radial-gradient(1px 1px at 40% 70%, var(--star-silver) 100%, transparent),
+    radial-gradient(1px 1px at 50% 30%, var(--star-silver) 100%, transparent),
+    radial-gradient(1px 1px at 60% 80%, var(--star-silver) 100%, transparent),
+    radial-gradient(1px 1px at 70% 15%, var(--star-silver) 100%, transparent),
+    radial-gradient(1px 1px at 80% 60%, var(--star-silver) 100%, transparent),
+    radial-gradient(1px 1px at 90% 40%, var(--star-silver) 100%, transparent),
+    radial-gradient(1px 1px at 15% 85%, var(--star-silver) 100%, transparent);
+  animation: twinkle 4s infinite ease-in-out;
+}
+
+.starsMedium {
+  background-image:
+    radial-gradient(2px 2px at 15% 30%, var(--star-gold) 100%, transparent),
+    radial-gradient(2px 2px at 35% 70%, var(--white) 100%, transparent),
+    radial-gradient(2px 2px at 55% 20%, var(--star-gold) 100%, transparent),
+    radial-gradient(2px 2px at 75% 80%, var(--white) 100%, transparent),
+    radial-gradient(2px 2px at 85% 50%, var(--star-gold) 100%, transparent);
+  animation: twinkle 3s infinite ease-in-out 0.5s;
+}
+
+.starsLarge {
+  background-image:
+    radial-gradient(3px 3px at 20% 25%, var(--star-gold) 100%, transparent),
+    radial-gradient(3px 3px at 60% 65%, var(--star-gold) 100%, transparent),
+    radial-gradient(3px 3px at 80% 35%, var(--white) 100%, transparent),
+    radial-gradient(3px 3px at 40% 95%, var(--star-gold) 100%, transparent);
+  animation: twinkle 5s infinite ease-in-out 1s;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Shooting Stars */
+.shootingStar {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--white), transparent);
+  animation: shoot 3s infinite ease-out;
+  opacity: 0;
+}
+
+.shootingStar:nth-child(4) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+.shootingStar:nth-child(5) {
+  top: 40%;
+  left: 60%;
+  animation-delay: 2s;
+}
+.shootingStar:nth-child(6) {
+  top: 70%;
+  left: 30%;
+  animation-delay: 4s;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-45deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(300px) translateY(300px) rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Nebula Effects */
+.nebula {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nebula1 {
+  width: 600px;
+  height: 600px;
+  background: var(--cosmic-purple);
+  top: -200px;
+  right: -200px;
+  animation: nebulaPulse 15s infinite ease-in-out;
+}
+
+.nebula2 {
+  width: 500px;
+  height: 500px;
+  background: var(--nebula-pink);
+  bottom: 10%;
+  left: -150px;
+  animation: nebulaPulse 20s infinite ease-in-out 5s;
+}
+
+.nebula3 {
+  width: 400px;
+  height: 400px;
+  background: var(--cosmic-blue);
+  top: 50%;
+  right: 10%;
+  animation: nebulaPulse 18s infinite ease-in-out 10s;
+}
+
+@keyframes nebulaPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.25;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: linear-gradient(to bottom, var(--night-darkest), transparent);
+}
+
+.navLogo {
+  font-family: "Cinzel", serif;
+  font-size: 1.2rem;
+  color: var(--star-gold);
+  letter-spacing: 0.3em;
+}
+
+.navLinks {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.navLinks a {
+  color: var(--white-soft);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navLinks a::after {
+  content: "✦";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  color: var(--star-gold);
+  font-size: 0.6rem;
+  transition: transform 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: var(--star-gold);
+}
+
+.navLinks a:hover::after {
+  transform: translateX(-50%) scale(1);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.moon {
+  position: absolute;
+  top: 100px;
+  right: 15%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--moon-glow),
+    var(--star-silver)
+  );
+  border-radius: 50%;
+  box-shadow:
+    0 0 60px var(--moon-glow),
+    0 0 100px rgba(255, 250, 205, 0.3);
+  animation: moonGlow 5s infinite ease-in-out;
+}
+
+@keyframes moonGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 60px var(--moon-glow),
+      0 0 100px rgba(255, 250, 205, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 80px var(--moon-glow),
+      0 0 120px rgba(255, 250, 205, 0.5);
+  }
+}
+
+.heroConstellation {
+  font-size: 0.9rem;
+  letter-spacing: 0.5em;
+  color: var(--star-gold);
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  animation: fadeInDown 1s ease;
+}
+
+.heroConstellation::before,
+.heroConstellation::after {
+  content: "✦ ✦ ✦";
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+}
+
+.heroPhotos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  animation: fadeIn 1.2s ease 0.3s both;
+}
+
+.photoCelestial {
+  position: relative;
+}
+
+.photoOrbit {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 50%;
+  animation: orbit 20s linear infinite;
+}
+
+.photoOrbit::before {
+  content: "✦";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--star-gold);
+  font-size: 0.8rem;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.photoFrame {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(
+    135deg,
+    var(--star-gold),
+    var(--cosmic-purple),
+    var(--star-gold)
+  );
+  position: relative;
+  z-index: 2;
+}
+
+.photoInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--night-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photoPlaceholder {
+  color: var(--star-gold);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.constellationConnector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--star-gold);
+}
+
+.connectorLine {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--star-gold),
+    transparent
+  );
+}
+
+.connectorStar {
+  font-size: 1.5rem;
+  animation: starPulse 2s infinite;
+}
+
+@keyframes starPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+.heroTitle {
+  font-family: "Cinzel", serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease 0.5s both;
+}
+
+.amp {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: var(--star-gold);
+  margin: 0 20px;
+}
+
+.heroSubtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  animation: fadeIn 1s ease 0.7s both;
+}
+
+.heroDate {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  color: var(--star-silver);
+  animation: fadeIn 1s ease 0.9s both;
+}
+
+.star {
+  color: var(--star-gold);
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.scrollIndicator span {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--star-gold);
+}
+
+.arrow {
+  font-size: 1.2rem;
+  animation: scrollBounce 2s infinite;
+}
+
+@keyframes scrollBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Styles */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.sectionStars {
+  font-size: 1.5rem;
+  color: var(--star-gold);
+  letter-spacing: 0.5em;
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-family: "Cinzel", serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  margin-bottom: 15px;
+}
+
+.sectionSubtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-light);
+}
+
+/* Story Section */
+.storySection {
+  padding: 120px 50px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(124, 58, 237, 0.05),
+    transparent
+  );
+}
+
+.storyContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.storyImage {
+  position: relative;
+}
+
+.storyFrame {
+  aspect-ratio: 3/4;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 20px;
+  position: relative;
+}
+
+.storyFrame::before,
+.storyFrame::after {
+  content: "✦";
+  position: absolute;
+  color: var(--star-gold);
+  font-size: 1rem;
+}
+
+.storyFrame::before {
+  top: -10px;
+  left: -10px;
+}
+.storyFrame::after {
+  bottom: -10px;
+  right: -10px;
+}
+
+.storyImgInner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--night-dark), var(--night-medium));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--star-gold);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.storyContent {
+  padding: 20px;
+}
+
+.storyQuote {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--white-soft);
+  margin-bottom: 30px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.storyQuote::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -10px;
+  font-size: 4rem;
+  color: var(--star-gold);
+  opacity: 0.5;
+  font-family: "Cinzel", serif;
+}
+
+.storyText {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--text-light);
+}
+
+/* Timeline Section */
+.timelineSection {
+  padding: 120px 50px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(236, 72, 153, 0.03),
+    transparent
+  );
+}
+
+.timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--star-gold),
+    var(--star-gold),
+    transparent
+  );
+}
+
+.timelineItem {
+  display: flex;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.timelineItem:nth-child(odd) {
+  justify-content: flex-start;
+  padding-right: calc(50% + 50px);
+  text-align: right;
+}
+
+.timelineItem:nth-child(even) {
+  justify-content: flex-end;
+  padding-left: calc(50% + 50px);
+}
+
+.timelineCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  padding: 35px;
+  max-width: 380px;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.timelineCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--star-gold);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.1);
+}
+
+.timelineStar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--star-gold);
+  font-size: 1.2rem;
+  top: 40px;
+  text-shadow: 0 0 20px var(--star-gold);
+}
+
+.timelineDate {
+  font-family: "Cinzel", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--star-gold);
+  margin-bottom: 15px;
+}
+
+.timelineTitle {
+  font-family: "Cinzel", serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 15px;
+}
+
+.timelineText {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+/* Gallery Section */
+.gallerySection {
+  padding: 120px 20px;
+}
+
+.galleryGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(3, 200px);
+  gap: 15px;
+}
+
+.galleryItem {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  transition: all 0.5s ease;
+}
+
+.galleryItem:hover {
+  border-color: var(--star-gold);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+  z-index: 10;
+}
+
+.galleryItem:nth-child(1) {
+  grid-column: span 5;
+  grid-row: span 2;
+}
+.galleryItem:nth-child(2) {
+  grid-column: span 4;
+}
+.galleryItem:nth-child(3) {
+  grid-column: span 3;
+}
+.galleryItem:nth-child(4) {
+  grid-column: span 3;
+}
+.galleryItem:nth-child(5) {
+  grid-column: span 4;
+}
+.galleryItem:nth-child(6) {
+  grid-column: span 7;
+}
+.galleryItem:nth-child(7) {
+  grid-column: span 5;
+}
+
+.galleryInner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--night-dark), var(--night-medium));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--star-gold);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+}
+
+.galleryOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 10, 26, 0.95), transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 25px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.galleryItem:hover .galleryOverlay {
+  opacity: 1;
+}
+
+.galleryOverlay h4 {
+  font-family: "Cinzel", serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 5px;
+}
+
+.galleryOverlay p {
+  font-size: 0.85rem;
+  color: var(--star-gold);
+}
+
+/* Letter Section */
+.letterSection {
+  padding: 120px 50px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    ellipse at center,
+    var(--night-medium),
+    var(--night-darkest)
+  );
+}
+
+.letterWrapper {
+  max-width: 750px;
+  padding: 20px;
+}
+
+.letterFrame {
+  border: 1px solid var(--star-gold);
+  padding: 60px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.letterCorner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-color: var(--star-gold);
+  border-style: solid;
+}
+
+.tl {
+  top: 10px;
+  left: 10px;
+  border-width: 2px 0 0 2px;
+}
+.tr {
+  top: 10px;
+  right: 10px;
+  border-width: 2px 2px 0 0;
+}
+.bl {
+  bottom: 10px;
+  left: 10px;
+  border-width: 0 0 2px 2px;
+}
+.br {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 2px 2px 0;
+}
+
+.letterStar {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: var(--star-gold);
+  background: var(--night-darkest);
+  padding: 0 20px;
+}
+
+.letterGreeting {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.5rem;
+  font-style: italic;
+  color: var(--star-gold);
+  margin-bottom: 40px;
+}
+
+.letterBody {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+  line-height: 2.2;
+  color: var(--white-soft);
+}
+
+.letterBody p {
+  margin-bottom: 30px;
+  text-indent: 40px;
+}
+
+.letterSignature {
+  text-align: right;
+  margin-top: 50px;
+}
+
+.letterSignature p {
+  color: var(--text-light);
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.signatureName {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  color: var(--star-gold);
+  letter-spacing: 0.1em;
+}
+
+/* Counter Section */
+.counterSection {
+  padding: 100px 50px;
+  background: linear-gradient(
+    135deg,
+    var(--cosmic-purple),
+    var(--night-dark),
+    var(--nebula-pink)
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.counterSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 30% 50%,
+    rgba(255, 215, 0, 0.1),
+    transparent 50%
+  );
+}
+
+.counterTitle {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 0.2em;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.counterGrid {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.counterItem {
+  text-align: center;
+}
+
+.counterNumber {
+  font-family: "Cinzel", serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  color: var(--star-gold);
+  line-height: 1;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.counterLabel {
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--white-soft);
+  margin-top: 15px;
+}
+
+/* Footer */
+.footer {
+  padding: 80px 50px;
+  background: var(--night-darkest);
+  text-align: center;
+  border-top: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.footerConstellation {
+  font-size: 1.5rem;
+  color: var(--star-gold);
+  letter-spacing: 0.5em;
+  margin-bottom: 30px;
+}
+
+.footerNames {
+  font-family: "Cinzel", serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+}
+
+.footerQuote {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-light);
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+.footerSocial {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.footerSocial a {
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--star-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--star-gold);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.footerSocial a:hover {
+  background: var(--star-gold);
+  color: var(--night-darkest);
+}
+
+.footerCredit {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  letter-spacing: 0.2em;
+}
+
+/* Music Toggle */
+.musicToggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  background: transparent;
+  border: 1px solid var(--star-gold);
+  color: var(--star-gold);
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.musicToggle:hover {
+  background: var(--star-gold);
+  color: var(--night-darkest);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .galleryGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .galleryItem:nth-child(1) {
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+  .galleryItem:nth-child(2) {
+    grid-column: span 3;
+  }
+  .galleryItem:nth-child(3) {
+    grid-column: span 3;
+  }
+  .galleryItem:nth-child(4) {
+    grid-column: span 3;
+  }
+  .galleryItem:nth-child(5) {
+    grid-column: span 3;
+  }
+  .galleryItem:nth-child(6) {
+    grid-column: span 6;
+  }
+  .galleryItem:nth-child(7) {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 20px;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .storySection,
+  .timelineSection,
+  .letterSection {
+    padding: 80px 20px;
+  }
+
+  .moon {
+    width: 80px;
+    height: 80px;
+    top: 80px;
+    right: 10%;
+  }
+
+  .heroPhotos {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .photoFrame {
+    width: 150px;
+    height: 150px;
+  }
+
+  .constellationConnector {
+    transform: rotate(90deg);
+  }
+
+  .storyContainer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timelineItem:nth-child(odd),
+  .timelineItem:nth-child(even) {
+    justify-content: flex-start;
+    padding-left: 60px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .timelineStar {
+    left: 20px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .galleryItem:nth-child(n) {
+    grid-column: span 1;
+    height: 250px;
+  }
+
+  .letterFrame {
+    padding: 40px 25px;
+  }
+
+  .counterGrid {
+    gap: 30px;
+  }
+
+  .counterNumber {
+    font-size: 3rem;
+  }
+}
