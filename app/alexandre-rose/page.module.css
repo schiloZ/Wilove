@@ -1,0 +1,944 @@
+/* Jean & Marie - Love Story Styles */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap");
+
+.container {
+  --rose-light: #fff5f5;
+  --rose-soft: #ffe4e6;
+  --rose-medium: #fda4af;
+  --rose-deep: #e11d48;
+  --gold: #d4a574;
+  --gold-light: #f5e6d3;
+  --cream: #fefcfb;
+  --text-dark: #1f1f1f;
+  --text-soft: #6b6b6b;
+
+  font-family: "Montserrat", sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* Floating Hearts Animation */
+.floatingHearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  font-size: 20px;
+  color: var(--rose-medium);
+  opacity: 0.3;
+  animation: floatUp 15s infinite ease-in-out;
+}
+
+.heart:nth-child(1) {
+  left: 5%;
+  animation-delay: 0s;
+  animation-duration: 12s;
+}
+.heart:nth-child(2) {
+  left: 15%;
+  animation-delay: 2s;
+  animation-duration: 14s;
+}
+.heart:nth-child(3) {
+  left: 25%;
+  animation-delay: 4s;
+  animation-duration: 11s;
+}
+.heart:nth-child(4) {
+  left: 35%;
+  animation-delay: 1s;
+  animation-duration: 16s;
+}
+.heart:nth-child(5) {
+  left: 45%;
+  animation-delay: 3s;
+  animation-duration: 13s;
+}
+.heart:nth-child(6) {
+  left: 55%;
+  animation-delay: 5s;
+  animation-duration: 15s;
+}
+.heart:nth-child(7) {
+  left: 65%;
+  animation-delay: 0.5s;
+  animation-duration: 12s;
+}
+.heart:nth-child(8) {
+  left: 75%;
+  animation-delay: 2.5s;
+  animation-duration: 14s;
+}
+.heart:nth-child(9) {
+  left: 85%;
+  animation-delay: 4.5s;
+  animation-duration: 11s;
+}
+.heart:nth-child(10) {
+  left: 95%;
+  animation-delay: 1.5s;
+  animation-duration: 16s;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100px) rotate(720deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--rose-light) 0%,
+    var(--cream) 50%,
+    var(--gold-light) 100%
+  );
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fda4af' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.ornamentTop {
+  font-size: 3rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease-out;
+}
+
+.couplePhotos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  animation: fadeIn 1.2s ease-out 0.3s both;
+}
+
+.photoFrame {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid var(--gold);
+  padding: 5px;
+  background: white;
+  box-shadow: 0 20px 60px rgba(225, 29, 72, 0.15);
+  overflow: hidden;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+  flex-shrink: 0;
+}
+
+.photoFrame:hover {
+  transform: scale(1.05);
+  box-shadow: 0 30px 80px rgba(225, 29, 72, 0.25);
+}
+
+.photoImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.photoPlaceholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--rose-soft), var(--gold-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rose-deep);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.heartConnector {
+  font-size: 2.5rem;
+  color: var(--rose-deep);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.heroTitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 300;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  animation: fadeIn 1.5s ease-out 0.6s both;
+  letter-spacing: 0.1em;
+}
+
+.heroTitle span {
+  color: var(--rose-deep);
+  font-style: italic;
+}
+
+.heroDate {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  letter-spacing: 0.3em;
+  margin-bottom: 30px;
+  animation: fadeIn 1.5s ease-out 0.9s both;
+}
+
+.heroQuote {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--text-soft);
+  max-width: 600px;
+  line-height: 1.8;
+  animation: fadeIn 1.5s ease-out 1.2s both;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  color: var(--rose-deep);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Story Section */
+.storySection {
+  padding: 100px 20px;
+  background: white;
+  position: relative;
+}
+
+.sectionTitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: "♥";
+  display: block;
+  color: var(--rose-deep);
+  font-size: 1.5rem;
+  margin-top: 15px;
+}
+
+.storyContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.storyText {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  line-height: 2;
+  color: var(--text-soft);
+  margin-bottom: 40px;
+}
+
+.storyText::first-letter {
+  font-size: 4rem;
+  float: left;
+  line-height: 1;
+  margin-right: 15px;
+  color: var(--rose-deep);
+  font-weight: 600;
+}
+
+/* Timeline Section */
+.timelineSection {
+  padding: 100px 20px;
+  background: linear-gradient(180deg, var(--rose-light) 0%, white 100%);
+}
+
+.timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--rose-deep), var(--gold));
+}
+
+.timelineItem {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50%;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.timelineItem:nth-child(even) {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: 50%;
+}
+
+.timelineContent {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  max-width: 380px;
+  margin-right: 40px;
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.timelineContent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(225, 29, 72, 0.15);
+}
+
+.timelineItem:nth-child(even) .timelineContent {
+  margin-right: 0;
+  margin-left: 40px;
+}
+
+.timelineDot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: var(--rose-deep);
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 0 0 4px var(--rose-soft);
+}
+
+.timelineDate {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+}
+
+.timelineTitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.timelineText {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.timelineImageContainer {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  margin-top: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.timelineImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.timelineContent:hover .timelineImage {
+  transform: scale(1.05);
+}
+
+/* Gallery Section */
+.gallerySection {
+  padding: 100px 20px;
+  background: white;
+}
+
+.galleryGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.galleryItem {
+  position: relative;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.galleryItem:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 60px rgba(225, 29, 72, 0.2);
+}
+
+.galleryLarge {
+  grid-row: span 2;
+  height: auto;
+  min-height: 400px;
+}
+
+.galleryImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.galleryItem:hover .galleryImage {
+  transform: scale(1.1);
+}
+
+.galleryPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--rose-soft), var(--gold-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rose-deep);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.galleryOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  z-index: 2;
+}
+
+.galleryItem:hover .galleryOverlay {
+  transform: translateY(0);
+}
+
+.galleryOverlay h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.galleryOverlay p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Letter Section */
+.letterSection {
+  padding: 100px 20px;
+  background: linear-gradient(
+    135deg,
+    var(--rose-light) 0%,
+    var(--gold-light) 100%
+  );
+  position: relative;
+}
+
+.letterContainer {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  padding: 60px 50px;
+  border-radius: 5px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transform: rotate(-1deg);
+}
+
+.letterContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    var(--rose-soft) 31px,
+    var(--rose-soft) 32px
+  );
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.letterHeader {
+  text-align: right;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.letterDate {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: var(--text-soft);
+}
+
+.letterGreeting {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  color: var(--rose-deep);
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.letterBody {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  line-height: 2;
+  color: var(--text-dark);
+  position: relative;
+  z-index: 1;
+}
+
+.letterBody p {
+  margin-bottom: 25px;
+  text-indent: 30px;
+}
+
+.letterSignature {
+  text-align: right;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.letterSignature .name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--rose-deep);
+}
+
+.waxSeal {
+  position: absolute;
+  bottom: -30px;
+  right: 40px;
+  width: 80px;
+  height: 80px;
+  background: var(--rose-deep);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 10px 30px rgba(225, 29, 72, 0.4);
+  transform: rotate(15deg);
+}
+
+/* Countdown Section */
+.countdownSection {
+  padding: 80px 20px;
+  background: var(--rose-deep);
+  color: white;
+  text-align: center;
+}
+
+.countdownTitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.countdownGrid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.countdownItem {
+  text-align: center;
+}
+
+.countdownNumber {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 4rem;
+  font-weight: 300;
+  display: block;
+  line-height: 1;
+}
+
+.countdownLabel {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+  padding: 60px 20px;
+  background: var(--text-dark);
+  color: white;
+  text-align: center;
+}
+
+.footerQuote {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+}
+
+.footerNames {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  color: var(--rose-medium);
+}
+
+.footerCredit {
+  margin-top: 40px;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+/* ============================================
+   🎵 MUSIC PLAYER STYLES
+   ============================================ */
+
+.musicContainer {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.musicTooltip {
+  background: white;
+  color: var(--rose-deep);
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  animation:
+    tooltipBounce 1s ease-in-out infinite,
+    fadeIn 0.5s ease-out;
+  white-space: nowrap;
+}
+
+@keyframes tooltipBounce {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+}
+
+.musicToggle {
+  width: 55px;
+  height: 55px;
+  background: var(--rose-deep);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(225, 29, 72, 0.4);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+  font-size: 1.3rem;
+  user-select: none;
+}
+
+.musicToggle:hover {
+  transform: scale(1.1);
+  background: #be123c;
+}
+
+.musicToggle:active {
+  transform: scale(0.95);
+}
+
+/* Animation quand la musique joue */
+.musicPlaying {
+  animation: musicPulse 1.5s ease-in-out infinite;
+  background: linear-gradient(135deg, var(--rose-deep), var(--gold));
+}
+
+@keyframes musicPulse {
+  0%,
+  100% {
+    box-shadow: 0 5px 20px rgba(225, 29, 72, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 5px 30px rgba(225, 29, 72, 0.6),
+      0 0 60px rgba(225, 29, 72, 0.3);
+  }
+}
+
+/* Onde sonore autour du bouton quand ça joue */
+.musicPlaying::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid var(--rose-deep);
+  animation: soundWave 1.5s ease-out infinite;
+}
+
+.musicPlaying::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid var(--rose-deep);
+  animation: soundWave 1.5s ease-out infinite 0.5s;
+}
+
+@keyframes soundWave {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Responsive - Photos du couple restent horizontales */
+@media (max-width: 768px) {
+  /* Les photos du couple restent en ligne horizontale */
+  .couplePhotos {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .photoFrame {
+    width: 110px;
+    height: 110px;
+  }
+
+  .heartConnector {
+    font-size: 1.5rem;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timelineItem,
+  .timelineItem:nth-child(even) {
+    padding-left: 60px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+
+  .timelineContent,
+  .timelineItem:nth-child(even) .timelineContent {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .timelineDot {
+    left: 20px;
+  }
+
+  .letterContainer {
+    padding: 40px 30px;
+    transform: rotate(0);
+  }
+
+  .countdownGrid {
+    gap: 20px;
+  }
+
+  .countdownNumber {
+    font-size: 2.5rem;
+  }
+
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .galleryLarge {
+    grid-row: span 1;
+    min-height: 320px;
+  }
+
+  /* Music player responsive */
+  .musicContainer {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .musicToggle {
+    width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
+  }
+
+  .musicTooltip {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 400px) {
+  .couplePhotos {
+    gap: 10px;
+  }
+
+  .photoFrame {
+    width: 90px;
+    height: 90px;
+  }
+
+  .heartConnector {
+    font-size: 1.2rem;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroDate {
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+  }
+
+  .heroQuote {
+    font-size: 1.1rem;
+  }
+
+  .musicContainer {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .musicToggle {
+    width: 45px;
+    height: 45px;
+  }
+
+  .musicTooltip {
+    display: none;
+  }
+}
