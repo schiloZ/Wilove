@@ -123,7 +123,7 @@ export default function JeanMariePage() {
         <div className={styles.couplePhotos}>
           <div className={styles.photoFrame}>
             <Image
-              src="/images/clients_Alexandre_Rose/alexandre.png"
+              src="/images/clients_alexandre_rose/alexandre.png"
               alt="Photo de Jean"
               width={180}
               height={180}
@@ -133,7 +133,7 @@ export default function JeanMariePage() {
           <div className={styles.heartConnector}>♥</div>
           <div className={styles.photoFrame}>
             <Image
-              src="/images/clients_Alexandre_Rose/rose.png"
+              src="/images/clients_alexandre_rose/rose.png"
               alt="Photo de Marie"
               width={180}
               height={180}
@@ -179,25 +179,25 @@ export default function JeanMariePage() {
             date="14 Février 2020"
             title="Notre Première Rencontre"
             text="Le jour où nos chemins se sont croisés et où tout a changé pour toujours..."
-            imageSrc="/images/clients_Alexandre_Rose/photo1.PNG"
+            imageSrc="/images/clients_alexandre_rose/photo1.PNG"
           />
           <TimelineItem
             date="21 Mars 2020"
             title="Notre Premier Voyage"
             text="Une escapade romantique qui a scellé notre amour à jamais..."
-            imageSrc="/images/clients_Alexandre_Rose/photo2.PNG"
+            imageSrc="/images/clients_alexandre_rose/photo2.PNG"
           />
           <TimelineItem
             date="14 Février 2021"
             title="Un An d'Amour"
             text="Notre premier anniversaire, célébré sous les étoiles..."
-            imageSrc="/images/clients_Alexandre_Rose/photo3.PNG"
+            imageSrc="/images/clients_alexandre_rose/photo3.PNG"
           />
           <TimelineItem
             date="25 Décembre 2023"
             title="La Demande"
             text='Le plus beau "oui" de notre vie, le début d&apos;une nouvelle aventure...'
-            imageSrc="/images/clients_Alexandre_Rose/photo4.PNG"
+            imageSrc="/images/clients_alexandre_rose/photo4.PNG"
           />
         </div>
       </section>
@@ -209,28 +209,28 @@ export default function JeanMariePage() {
           <GalleryItem
             title="Soirée Romantique"
             location="Paris, 2022"
-            imageSrc="/images/clients_Alexandre_Rose/photo1.PNG"
+            imageSrc="/images/clients_alexandre_rose/photo1.PNG"
             large
           />
           <GalleryItem
             title="Vacances d'Été"
             location="Nice, 2023"
-            imageSrc="/images/clients_Alexandre_Rose/photo2.PNG"
+            imageSrc="/images/clients_alexandre_rose/photo2.PNG"
           />
           <GalleryItem
             title="Noël en Famille"
             location="Lyon, 2023"
-            imageSrc="/images/clients_Alexandre_Rose/photo3.PNG"
+            imageSrc="/images/clients_alexandre_rose/photo3.PNG"
           />
           <GalleryItem
             title="Notre Coin Préféré"
             location="Abidjan, 2024"
-            imageSrc="/images/clients_Alexandre_Rose/photo4.PNG"
+            imageSrc="/images/clients_alexandre_rose/photo4.PNG"
           />
           <GalleryItem
             title="Coucher de Soleil"
             location="Grand-Bassam, 2024"
-            imageSrc="/images/clients_Alexandre_Rose/photo5.PNG"
+            imageSrc="/images/clients_alexandre_rose/photo5.PNG"
           />
         </div>
       </section>
